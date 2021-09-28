@@ -10,10 +10,6 @@ export default function AdminPanel() {
     /*  const location = useLocation(); */
 
     /* const { id, authorized } = location.state; */
-    let id = 1, authorized = true;
-    if (!authorized ) {
-        return (<div>you don't belong here</div>)
-    }
 
     
     function handleCreateWallet() {

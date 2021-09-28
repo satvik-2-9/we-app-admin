@@ -13,7 +13,7 @@ export default function Login() {
     const [password, setPassword] = useState(); 
     
     function handleLogin() {
-        axios.post('https://wewallet.herokuapp.com/admin-login', {
+/*         axios.post('https://wewallet.herokuapp.com/admin-login', {
             id: id,
             password:password
         })
@@ -27,13 +27,20 @@ export default function Login() {
             })
         }, (e) => {
             console.log(e);
-        })
-        
+        }) */
+        /* history.push({
+            pathname: '/adminpanel',
+            state: {
+              authorized:true,
+              id: id
+            },
+        }) */
+        window.location.href = './adminpanel';
     }
 
     return (
         <div className="login">
-            <Form >
+            <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Admin ID</Form.Label>
                     <Form.Control type="text" placeholder="Enter ID" onChange={(e)=>{setID(e.target.value)}} />
@@ -48,7 +55,7 @@ export default function Login() {
                  
                 </Form.Group>
                 
-                <Button variant="primary" type="submit" onClick={handleLogin}>
+                <Button variant="primary" type="submit" >
                     Login
                 </Button>
                 
